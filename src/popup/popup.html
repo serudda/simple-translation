@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Translator</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Page Translator</h1>
+
+    <!-- No API key message -->
+    <div id="noKeyMsg" class="message" hidden>
+      <p>No API key configured.</p>
+      <a href="#" id="openSettings">Open Settings</a>
+    </div>
+
+    <!-- Main controls -->
+    <div id="controls">
+      <div class="field">
+        <label for="targetLang">Translate to</label>
+        <select id="targetLang"></select>
+      </div>
+
+      <button id="translateBtn" class="btn btn-primary">Translate Page</button>
+      <button id="restoreBtn" class="btn btn-secondary" hidden>Restore Original</button>
+    </div>
+
+    <!-- Progress -->
+    <div id="progress" hidden>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <p class="progress-text" id="progressText">Preparing...</p>
+    </div>
+
+    <!-- Error -->
+    <div id="errorMsg" class="message error" hidden></div>
+  </div>
+
+  <script src="../lib/constants.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
